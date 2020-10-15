@@ -1,4 +1,3 @@
-
 ---
 categories:
 - ""
@@ -9,7 +8,7 @@ draft: false
 image: pic09.jpg
 keywords: ""
 slug: magna
-title:Where Do People Drink The Most Beer, Wine And Spirits?
+title: Where Do People Drink The Most Beer, Wine And Spirits?
 ---
 
 
