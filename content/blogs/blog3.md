@@ -8,7 +8,7 @@ draft: false
 image: pic08.jpg
 keywords: ""
 slug: tempus
-title: the social dilemma
+title: The social dilemma
 ---
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
