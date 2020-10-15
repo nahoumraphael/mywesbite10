@@ -8,7 +8,7 @@ description: "Alcohol consumption across the globe"
 draft: false
 image: pic09.jpg
 keywords: ""
-slug: ipsum
+slug: magna
 title:Where Do People Drink The Most Beer, Wine And Spirits?
 ---
 
