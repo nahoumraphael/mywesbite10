@@ -12,9 +12,9 @@ title: Ipsum
 ---
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"https://nahoum-raphael-website.netlify.app">
+"https://nahoum-raphael-website.netlify.app/blogs/aliquam/">
 
-<html xmlns="https://nahoum-raphael-website.netlify.app" xml:lang="en" lang="en">
+<html xmlns="https://nahoum-raphael-website.netlify.app/blogs/aliquam/" xml:lang="en" lang="en">
 
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
