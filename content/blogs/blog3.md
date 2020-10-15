@@ -10,22 +10,6 @@ keywords: ""
 slug: tempus
 title: The social dilemma
 ---
----
-title: 'Session 4: Homework 2'
-author: "Your name goes here"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
-  pdf_document:
-    toc: yes
----
-
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(

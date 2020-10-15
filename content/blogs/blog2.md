@@ -1,14 +1,15 @@
+
 ---
-title: "Where Do People Drink The Most Beer, Wine And Spirits?"
-date: '2017-10-31T22:26:09-05:00'
-description: Alcohol consumption across the globe
-draft: no
-image: pic09.jpg
-keywords: ''
-slug: magna
 categories:
-- ''
-- ''
+- ""
+- ""
+date: "2017-10-31T22:26:09-05:00"
+description: "Alcohol consumption across the globe"
+draft: false
+image: pic09.jpg
+keywords: ""
+slug: ipsum
+title:Where Do People Drink The Most Beer, Wine And Spirits?
 ---
 
 
