@@ -10,6 +10,8 @@ keywords: ""
 slug: magna
 title: Where Do People Drink The Most Beer, Wine And Spirits?
 ---
+
+
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
   message = FALSE, 
