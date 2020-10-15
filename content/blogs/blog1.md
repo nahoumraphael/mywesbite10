@@ -12,9 +12,9 @@ title: Raphaël Nahoum's background
 ---
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"https://nahoum-raphael-website.netlify.app/blogs/aliquam/">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd/">
 
-<html xmlns="https://nahoum-raphael-website.netlify.app/blogs/aliquam/" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml/" xml:lang="en" lang="en">
 
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
