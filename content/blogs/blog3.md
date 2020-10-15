@@ -3,13 +3,29 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:26:13-05:00"
-description: Who uses social media?
+description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
 image: pic08.jpg
 keywords: ""
 slug: tempus
-title: The social dilemma
+title: Tempus
 ---
+---
+title: 'Session 4: Homework 2'
+author: "Your name goes here"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+  pdf_document:
+    toc: yes
+---
+
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
