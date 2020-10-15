@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "https://raphael-nahoum-website.netlify.app/"
+baseURL = "https://nahoum-raphael-website.netlify.app/"
 languageCode = "en-us"
 title = "Portfolio website"
 theme = "forty"
