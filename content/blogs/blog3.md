@@ -3,61 +3,13 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:26:13-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+description: Who uses social media?
 draft: false
 image: pic08.jpg
 keywords: ""
 slug: tempus
-title: Tempus
+title: The Social Dilemma
 ---
----
-title: 'Session 4: Homework 2'
-author: "Your name goes here"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
-  pdf_document:
-    toc: yes
----
-
-
-```{r, setup, include=FALSE}
-knitr::opts_chunk$set(
-  message = FALSE, 
-  warning = FALSE, 
-  tidy=FALSE,     # display code as typed
-  size="small")   # slightly smaller font for code
-options(digits = 3)
-
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
-```
-
-
-```{r load-libraries, include=FALSE}
-library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
-library(mosaic)
-library(ggthemes)
-library(lubridate)
-library(here)
-library(skimr)
-library(janitor)
-library(httr)
-library(readxl)
-library(vroom)
-```
-
-
 # General Social Survey (GSS)
 
 The [General Social Survey (GSS)](http://www.gss.norc.org/) gathers data on American society in order to monitor and explain trends in attitudes, behaviours, and attributes. Many trends have been tracked for decades, so one can see the evolution of attitudes, etc in American Society.
