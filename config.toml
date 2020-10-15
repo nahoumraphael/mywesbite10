@@ -101,13 +101,13 @@ disqusShortname = ""
       title = "Cheers"
       subtitle = "Where do  people drink the most beer, wine and spirit?"
       image = "pic08.jpg"
-      url = "project/project4"
+      url = "project/project2"
       
     [[params.tiles.showcase]]
       title = "The Power of Social Media"
       subtitle = "Instagram VS Snapchat VS Twitter"
       image = "pic09.jpg"
-      url = "project/project5"
+      url = "project/project3"
 
     [[params.tiles.showcase]]
    #   title = "Ipsum"
