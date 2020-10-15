@@ -1,18 +1,3 @@
----
-title: 'Portfolio Website'
-author: "Raphaël Nahoum"
-date: "`r Sys.Date()`"
-output:
-  pdf_document:
-    toc: yes
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
----
 
 
 ```{r, setup, echo=FALSE}
