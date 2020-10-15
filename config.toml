@@ -95,19 +95,19 @@ disqusShortname = ""
       title = "Who is Raphaël"
       subtitle = "Check  his resume"
       image = "pic07.jpg"
-      url = "projects/project1"
+      url = "project/project1"
 
   [[params.tiles.showcase]]
       title = "Cheers"
       subtitle = "Where do  people drink the most beer, wine and spirit?"
       image = "pic08.jpg"
-      url = "projects/project2"
+      url = "project/project2"
       
     [[params.tiles.showcase]]
       title = "The Power of Social Media"
       subtitle = "Instagram VS Snapchat VS Twitter"
       image = "pic09.jpg"
-      url = "projects/project3"
+      url = "project/project3"
 
     [[params.tiles.showcase]]
    #   title = "Ipsum"
@@ -138,14 +138,13 @@ disqusShortname = ""
   # Section Type Two
   [params.two]
     enable = true
-    title = "Massa libero"
-    subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. 
-    Mauris aliquet magna magna sed nunc rhoncus pharetra. 
-    Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
-    Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero.
-    Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus."""
-    buttonText = "Get Started"
-    url = "blogs"
+    title = "About me"
+    #subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. 
+    I was born and raised in Paris, France. 
+    I decided to move to the UK at 18 to pursue my undergraduate studies. 
+    I'm currently pursuing a Master degree at LBS.""
+    #buttonText = "Get Started"
+    #url = "blogs"
 
 
   # Contact section
