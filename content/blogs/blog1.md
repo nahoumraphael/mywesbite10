@@ -3,12 +3,12 @@ categories:
 - ""
 - ""
 date: "2017-10-31T21:28:43-05:00"
-description: ""
+description: "My CV"
 draft: false
 image: pic1A.jpg
 keywords: ""
 slug: ipsum
-title: Ipsum
+title: Raphaël Nahoum's background
 ---
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
