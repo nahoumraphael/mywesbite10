@@ -1,0 +1,383 @@
+---
+title: "Where Do People Drink The Most Beer, Wine And Spirits?"
+date: '2017-10-31T22:26:09-05:00'
+description: Alcohol consumption across the globe
+draft: no
+image: pic09.jpg
+keywords: ''
+slug: magna
+categories:
+- ''
+- ''
+---
+
+
+
+<pre class="r"><code>library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0.9000 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(mosaic)</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;mosaic&#39;:
+##   method                           from   
+##   fortify.SpatialPolygonsDataFrame ggplot2</code></pre>
+<pre><code>## 
+## The &#39;mosaic&#39; package masks several functions from core packages in order to add 
+## additional features.  The original behavior of these functions should not be affected by this.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;mosaic&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:Matrix&#39;:
+## 
+##     mean</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     count, do, tally</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     cross</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     stat</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
+##     quantile, sd, t.test, var</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     max, mean, min, prod, range, sample, sum</code></pre>
+<pre class="r"><code>library(ggthemes)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;ggthemes&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:mosaic&#39;:
+## 
+##     theme_map</code></pre>
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union</code></pre>
+<pre class="r"><code>library(fivethirtyeight)
+library(here)</code></pre>
+<pre><code>## here() starts at /Users/raphaelnahoum/Desktop/London Business School/Core courses/Data Analytics for Finance/mywesbite10</code></pre>
+<pre class="r"><code>library(skimr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;skimr&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:mosaic&#39;:
+## 
+##     n_missing</code></pre>
+<pre class="r"><code>library(janitor)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;janitor&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     chisq.test, fisher.test</code></pre>
+<pre class="r"><code>library(vroom)
+library(tidyquant)</code></pre>
+<pre><code>## Loading required package: PerformanceAnalytics</code></pre>
+<pre><code>## Loading required package: xts</code></pre>
+<pre><code>## Loading required package: zoo</code></pre>
+<pre><code>## 
+## Attaching package: &#39;zoo&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     as.Date, as.Date.numeric</code></pre>
+<pre><code>## 
+## Attaching package: &#39;xts&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     first, last</code></pre>
+<pre><code>## 
+## Attaching package: &#39;PerformanceAnalytics&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     legend</code></pre>
+<pre><code>## Loading required package: quantmod</code></pre>
+<pre><code>## Loading required package: TTR</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
+##   method            from
+##   as.zoo.data.frame zoo</code></pre>
+<pre><code>## Version 0.4-0 included new data defaults. See ?getSymbols.</code></pre>
+<pre><code>## ══ Need to Learn tidyquant? ════════════════════════════════════════════════════════════════════════════════════════════
+## Business Science offers a 1-hour course - Learning Lab #9: Performance Analysis &amp; Portfolio Optimization with tidyquant!
+## &lt;/&gt; Learn more at: https://university.business-science.io/p/learning-labs-pro &lt;/&gt;</code></pre>
+<pre class="r"><code>library(rvest)    # scrape websites</code></pre>
+<pre><code>## Loading required package: xml2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rvest&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     pluck</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     guess_encoding</code></pre>
+<pre class="r"><code>library(purrr)  
+library(lubridate) #to handle dates</code></pre>
+<p>Where Do People Drink The Most Beer, Wine And Spirits?</p>
+<pre class="r"><code>library(fivethirtyeight)
+data(drinks)
+
+
+# or download directly
+# alcohol_direct &lt;- read_csv(&quot;https://raw.githubusercontent.com/fivethirtyeight/data/master/alcohol-consumption/drinks.csv&quot;)</code></pre>
+<p>What are the variable types? Any missing values we should worry about?</p>
+<pre class="r"><code>glimpse(drinks)</code></pre>
+<pre><code>## Rows: 193
+## Columns: 5
+## $ country                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;An…
+## $ beer_servings                &lt;int&gt; 0, 89, 25, 245, 217, 102, 193, 21, 261, …
+## $ spirit_servings              &lt;int&gt; 0, 132, 0, 138, 57, 128, 25, 179, 72, 75…
+## $ wine_servings                &lt;int&gt; 0, 54, 14, 312, 45, 45, 221, 11, 212, 19…
+## $ total_litres_of_pure_alcohol &lt;dbl&gt; 0.0, 4.9, 0.7, 12.4, 5.9, 4.9, 8.3, 3.8,…</code></pre>
+<pre class="r"><code>skim(drinks)</code></pre>
+<table>
+<caption>(#tab:glimpse_skim_data)Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">drinks</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">193</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">country</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">28</td>
+<td align="right">0</td>
+<td align="right">193</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">beer_servings</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">106.16</td>
+<td align="right">101.14</td>
+<td align="right">0</td>
+<td align="right">20.0</td>
+<td align="right">76.0</td>
+<td align="right">188.0</td>
+<td align="right">376.0</td>
+<td align="left">▇▃▂▂▁</td>
+</tr>
+<tr class="even">
+<td align="left">spirit_servings</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">80.99</td>
+<td align="right">88.28</td>
+<td align="right">0</td>
+<td align="right">4.0</td>
+<td align="right">56.0</td>
+<td align="right">128.0</td>
+<td align="right">438.0</td>
+<td align="left">▇▃▂▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">wine_servings</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">49.45</td>
+<td align="right">79.70</td>
+<td align="right">0</td>
+<td align="right">1.0</td>
+<td align="right">8.0</td>
+<td align="right">59.0</td>
+<td align="right">370.0</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">total_litres_of_pure_alcohol</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4.72</td>
+<td align="right">3.77</td>
+<td align="right">0</td>
+<td align="right">1.3</td>
+<td align="right">4.2</td>
+<td align="right">7.2</td>
+<td align="right">14.4</td>
+<td align="left">▇▃▅▃▁</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># There are no missing variables</code></pre>
+<p>Make a plot that shows the top 25 beer consuming countries</p>
+<pre class="r"><code>beer_plot &lt;- drinks %&gt;%
+  select(beer_servings,country) %&gt;%
+  arrange(desc(beer_servings)) %&gt;%
+  head(25)
+glimpse(beer_plot)</code></pre>
+<pre><code>## Rows: 25
+## Columns: 2
+## $ beer_servings &lt;int&gt; 376, 361, 347, 346, 343, 343, 333, 313, 306, 297, 295, …
+## $ country       &lt;chr&gt; &quot;Namibia&quot;, &quot;Czech Republic&quot;, &quot;Gabon&quot;, &quot;Germany&quot;, &quot;Lithu…</code></pre>
+<pre class="r"><code>p &lt;- ggplot(beer_plot, aes (x=beer_servings, y=reorder(country, beer_servings), fill=beer_servings)) + 
+  geom_col() + 
+  theme_bw()+
+  
+  scale_fill_gradient(low=&quot;#FFF897&quot;, # This function manually adds a gradient to the fill variable.
+                      high=&quot;#EC9D00&quot;) +  # The codes are the hex colour codes for beer
+  
+  labs(title = &quot;Namibia tops the beer chart&quot;, # add labels to the df
+       subtitle = &quot;Top 25 countries world&#39;s biggest beer drinkers&quot;,
+       caption = &quot;Source: fivethirtyeight.com - 2014&quot;, # Source
+       fill = &quot;Beer Servings&quot; # Change legend name
+       ) +
+  ylab(NULL) +
+  xlab(&quot;Average servings of beer per person&quot;)  # y-axis
+p</code></pre>
+<p><img src="index_files/figure-html/beer_plot-1.png" width="672" /></p>
+<p>Make a plot that shows the top 25 wine consuming countries</p>
+<pre class="r"><code>wine_plot &lt;- drinks %&gt;%
+  select(wine_servings,country) %&gt;%
+  arrange(desc(wine_servings)) %&gt;%
+  head(25)
+glimpse(wine_plot)</code></pre>
+<pre><code>## Rows: 25
+## Columns: 2
+## $ wine_servings &lt;int&gt; 370, 339, 312, 280, 278, 276, 271, 254, 237, 233, 221, …
+## $ country       &lt;chr&gt; &quot;France&quot;, &quot;Portugal&quot;, &quot;Andorra&quot;, &quot;Switzerland&quot;, &quot;Denmar…</code></pre>
+<pre class="r"><code>p2 &lt;- ggplot(wine_plot, aes (x=wine_servings, y=reorder(country, wine_servings), fill=wine_servings)) + 
+  geom_col()+
+  theme_bw()+
+  scale_fill_gradient(low=&quot;#790D03&quot;, #gradient to the fill variable
+                      high=&quot;#B21226&quot;) +  # colour codes for wine
+  
+    labs(title = &quot;France tops the wine chart&quot;,
+       subtitle = &quot;Top 25 countries world&#39;s biggest wine drinkers&quot;,
+       caption = &quot;Source: fivethirtyeight.com - 2014&quot;, # Source
+       fill = &quot;Wine Servings&quot;)+
+  ylab(NULL) +
+  xlab(&quot;Average servings of wine per person&quot;) 
+
+print(p2)</code></pre>
+<p><img src="index_files/figure-html/wine_plot-1.png" width="672" /></p>
+<p>Finally, make a plot that shows the top 25 spirit consuming countries</p>
+<pre class="r"><code>spirit_plot &lt;- drinks %&gt;%
+  select(spirit_servings,country) %&gt;%
+  arrange(desc(spirit_servings)) %&gt;%
+  head(25)
+glimpse(spirit_plot)</code></pre>
+<pre><code>## Rows: 25
+## Columns: 2
+## $ spirit_servings &lt;int&gt; 438, 373, 326, 326, 315, 302, 293, 286, 258, 254, 252…
+## $ country         &lt;chr&gt; &quot;Grenada&quot;, &quot;Belarus&quot;, &quot;Haiti&quot;, &quot;Russian Federation&quot;, …</code></pre>
+<pre class="r"><code>plot3 &lt;- ggplot(spirit_plot, aes (x=spirit_servings, y=reorder(country, spirit_servings), fill=spirit_servings)) + 
+  geom_col() +
+  theme_bw()+
+  scale_fill_gradient(low=&quot;#ECEAE2&quot;,
+                      high=&quot;#D3D3D3&quot;) + # colour codes for spirit
+  
+  labs(title = &quot;Grenada tops the spirit chart!&quot;, 
+       subtitle = &quot;Top 25 countries world&#39;s biggest spirit drinkers&quot;,
+       caption = &quot;Source: fivethirtyeight.com - 2014&quot;,
+       fill = &quot;Spirit Servings&quot;
+       ) +
+  ylab(NULL) +
+  xlab(&quot;Average servings of spirit per person&quot;)
+
+plot3</code></pre>
+<p><img src="index_files/figure-html/spirit_plot-1.png" width="672" /></p>
+<p>Now that we have a breakdown of biggest beer, wine and spirit drinking countries, it would be interesting to look at what drink is consumed the most on average across the globe.</p>
+<pre class="r"><code>drinks %&gt;% 
+  summarise(Beer = mean(beer_servings), 
+            Wine = mean(wine_servings),
+            Spirits = mean(spirit_servings)) %&gt;% 
+  
+  #get table into tidy format
+  pivot_longer(c(Beer, Wine, Spirits), names_to =&quot;categories&quot;) %&gt;% 
+  
+  #bar plot
+  ggplot(aes(x = categories, y = value, fill = categories)) +
+  geom_col() + 
+  
+  #costum color
+  scale_fill_manual(values = c(&quot;#EC9D00&quot;,&quot;#D3D3D3&quot;,&quot;#B21226&quot;), labels=c(&quot;Beer&quot;, &quot;Spirits&quot;, &quot;Wine&quot;)) +
+  
+  #titles
+  labs(title = &quot;Beer is the most widely consumed alcoholic drink in the world&quot;,
+       subtitles = &quot;Average servings per person per year&quot;,
+       caption = &quot;Source: fivethirtyeight.com - 2014&quot;,
+       y = &quot;Number of servings&quot;,
+       x = NULL) + 
+  
+  #remove legend
+  theme(legend.position = &quot;none&quot;)</code></pre>
+<p><img src="index_files/figure-html/spirit_graph-1.png" width="672" />
+From this graph, it can be inferred that beer is the most widely consumed alcoholic drink in the world, followed by spirits and wine. Given that beer has a lower alcohol content in comparison to both spirits and wine, it can be consumed on a more regular basis. Additionally, beer is the cheapest alternative by far - wine especially tend to be a lot more expensive.</p>
+<p>It would be interesting to plot a graph showing how beer perform in comparison to water, coffe and tea.</p>

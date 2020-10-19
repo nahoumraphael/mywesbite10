@@ -1,17 +1,14 @@
 ---
-title: 'Session 4: Homework 2'
-author: "Your name goes here"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    theme: flatly
-    highlight: zenburn
-    number_sections: yes
-    toc: yes
-    toc_float: yes
-    code_folding: show
-  pdf_document:
-    toc: yes
+title: "The Social Dilemma"
+date: '2017-10-31T22:26:13-05:00'
+description: Who uses social media?
+draft: no
+image: pic08.jpg
+keywords: ''
+slug: tempus
+categories:
+- ''
+- ''
 ---
 
 
@@ -148,15 +145,6 @@ labs(title = "Usage of Twitter",
         plot.title  = element_text (size=20, colour="#7D7D7D"),
         axis.title.y= element_text(size=12, colour="#002144"))
 gss_plot_twitter
-
-```
-
-Now that we have a breakdown of Instagram, Snapchat and Twitter users, it would be interesting to look at what social media platform is used the most on average.
-```{r, most_users}
-gss_instagram %>%
-  Instagram <-proportion_instagram ==  "Yes"
-
-
 
 ```
 
