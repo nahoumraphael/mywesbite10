@@ -5,7 +5,7 @@ description: Alcohol consumption across the globe
 draft: no
 image: pic09.jpg
 keywords: ''
-slug: magna
+slug: project2
 categories:
 - ''
 - ''
