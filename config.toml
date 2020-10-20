@@ -41,7 +41,7 @@ disqusShortname = ""
     #subtitle = "By HTML5 Up"
     menu = "Menu"
     # Optional logo as brand stored in img/
-    # logo = "logo.png"
+    logo = "logo.png"
 
     [[params.navigation.links]]
       name = "Home"

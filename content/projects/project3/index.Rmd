@@ -89,7 +89,7 @@ labs(title = "Usage of Instagram",
 ```{r, snapchat}
 #We are calculating the proportion of snapcchat users
 gss_snapchat <- gss %>%
- filter(snapchat!="NA") %>% #we need to drop the NA values
+ filter(snapchat!="NA") %>% #we need to remove the NA values
   group_by(snapchat) %>% 
   summarise(count = n()) %>% 
   mutate(proportion_snapchat = count/sum(count)) 
@@ -119,7 +119,7 @@ labs(title = "Usage of Snapchat",
 ```{r,twitter}
 #We are calculating the proportion of twitter users
 gss_twitter <- gss %>%
- filter(twitter!="NA") %>% #we need to drop the NA values
+ filter(twitter!="NA") %>% #we need to remove the NA values
   group_by(twitter) %>% 
   summarise(count = n()) %>% 
   mutate(proportion_twitter = count/sum(count)) 
@@ -187,7 +187,7 @@ gss_plot_twitter_insta <- twitter_insta_ci %>%
     x = sex,
     y = mean_twitter_insta))+
 
-#Adding  errorbar to  visualise the confidence intervals for both gender
+#We add an error bar to better visualise the confidence intervals for both male and female
   geom_errorbar(aes(ymin=lower_bound, 
                     ymax=upper_bound, color=sex), 
                     width=0.1,

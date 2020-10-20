@@ -1,14 +1,14 @@
 ---
-categories:
-- ''
-- ''
+title: "Where Do People Drink The Most Beer, Wine And Spirits?"
 date: '2020-09-07'
 description: Alcohol consumption across the globe
-draft: false
+draft: no
 image: pic09.jpg
 keywords: ''
 slug: project2
-title: "Where Do People Drink The Most Beer, Wine And Spirits?"
+categories:
+- ''
+- ''
 ---
 
 
@@ -65,16 +65,16 @@ p <- ggplot(beer_plot, aes (x=beer_servings, y=reorder(country, beer_servings), 
   geom_col() + 
   theme_bw()+
   
-  scale_fill_gradient(low="#FFF897", # This function manually adds a gradient to the fill variable.
-                      high="#EC9D00") +  # The codes are the hex colour codes for beer
+  scale_fill_gradient(low="#FFF897", # Add a gradient to the fill variable
+                      high="#EC9D00") +  # colour codes for beer
   
-  labs(title = "Namibia tops the beer chart", # add labels to the df
+  labs(title = "Namibia tops the beer chart", # add labels to the plot
        subtitle = "Top 25 countries world's biggest beer drinkers",
        caption = "Source: fivethirtyeight.com - 2014", # Source
-       fill = "Beer Servings" # Change legend name
+       fill = "Beer Servings" 
        ) +
   ylab(NULL) +
-  xlab("Average servings of beer per person")  # y-axis
+  xlab("Average servings of beer per person")  
 p
 ```
 
@@ -91,7 +91,7 @@ glimpse(wine_plot)
 p2 <- ggplot(wine_plot, aes (x=wine_servings, y=reorder(country, wine_servings), fill=wine_servings)) + 
   geom_col()+
   theme_bw()+
-  scale_fill_gradient(low="#790D03", #gradient to the fill variable
+  scale_fill_gradient(low="#790D03", #Add a gradient to the fill variable
                       high="#B21226") +  # colour codes for wine
   
     labs(title = "France tops the wine chart",
@@ -117,7 +117,7 @@ glimpse(spirit_plot)
 plot3 <- ggplot(spirit_plot, aes (x=spirit_servings, y=reorder(country, spirit_servings), fill=spirit_servings)) + 
   geom_col() +
   theme_bw()+
-  scale_fill_gradient(low="#ECEAE2",
+  scale_fill_gradient(low="#ECEAE2", #Add a gradient to the fill variable
                       high="#D3D3D3") + # colour codes for spirit
   
   labs(title = "Grenada tops the spirit chart!", 
@@ -160,6 +160,7 @@ drinks %>%
   #remove legend
   theme(legend.position = "none")
 ````
+
 From this graph, it can be inferred  that beer is the most widely consumed alcoholic drink in the world, followed by spirits and wine. Given that beer has a lower alcohol content in comparison to both spirits and wine,  it can be consumed on a more regular basis. Additionally, beer is the cheapest alternative by far - wine especially tend to be a lot more expensive.
 
 It would be interesting to plot a graph showing how beer perform in comparison to water, coffe and tea.
