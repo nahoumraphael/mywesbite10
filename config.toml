@@ -174,8 +174,8 @@ disqusShortname = ""
     email = "rnahoum.mfa2021@london.edu"
 
     [[params.contact.phone]]
-    #title = "Phone"
-    #phone = "(000) 000-0000 x1234"
+    title = "Phone"
+    phone = "07607654783"
 
     [[params.contact.address]]
     title = "Address"
